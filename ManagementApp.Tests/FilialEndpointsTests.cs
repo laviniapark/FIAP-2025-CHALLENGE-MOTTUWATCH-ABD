@@ -6,7 +6,8 @@ using Xunit;
 
 namespace ManagementApp.Tests ;
 
-    public class FilialEndpointsTests : IClassFixture<CustomWebAppFactory>
+    [Collection("API Tests")]
+    public class FilialEndpointsTests
     {
         private readonly HttpClient _client;
 

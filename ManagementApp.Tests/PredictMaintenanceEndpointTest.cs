@@ -3,7 +3,8 @@ using Xunit;
 
 namespace ManagementApp.Tests ;
 
-    public class PredictMaintenanceEndpointTest : IClassFixture<CustomWebAppFactory>
+    [Collection("API Tests")]
+    public class PredictMaintenanceEndpointTest
     {
         private readonly HttpClient _client;
 
