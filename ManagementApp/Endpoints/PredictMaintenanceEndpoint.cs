@@ -1,3 +1,4 @@
+using IdempotentAPI.MinimalAPI;
 using ManagementApp.Models;
 using Microsoft.ML;
 
@@ -35,7 +36,7 @@ public static class PredictMaintenanceEndpoint
                 );
             
             return Results.Ok(response);
-        })
+        }).AddEndpointFilter<IdempotentAPIEndpointFilter>()
         .WithSummary("Prevê o custo de manutenção de uma moto")
         .WithDescription("Recebe dados como a quilometragem e os anos de uso de uma moto para calcular uma estimativa do custo de manutenção")
         .Produces<PredictResponse>(StatusCodes.Status200OK)

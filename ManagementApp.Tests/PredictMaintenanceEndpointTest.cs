@@ -12,6 +12,7 @@ namespace ManagementApp.Tests ;
             _client = factory.CreateClient();
             _client.DefaultRequestHeaders.Add("X-Api-Version", "2.0");
             _client.DefaultRequestHeaders.Add("X-API-Key", "rm555679");
+            _client.DefaultRequestHeaders.Add("Idempotency-Key", Guid.NewGuid().ToString());
         }
         
         [Fact]
